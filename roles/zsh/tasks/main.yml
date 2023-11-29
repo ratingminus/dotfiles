@@ -22,7 +22,7 @@
 
 # Oh-my-zsh
 - import_tasks: oh-my-zsh.yml
-  when: oh-my-zsh
+  when: oh_my_zsh
 
   # powerlevel10k
 - import_tasks: p10k.yml

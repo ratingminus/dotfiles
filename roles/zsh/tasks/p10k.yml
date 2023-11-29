@@ -1,6 +1,6 @@
 # Installation
 - name: Install Powerline10k theme 
-  ansible.builtin.git:
+  git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: "{{user_home}}/.oh-my-zsh/custom/themes/powerlevel10k"
     depth: 1

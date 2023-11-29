@@ -26,3 +26,16 @@
   copy:
     src: "{{user_home}}/.oh-my-zsh/templates/zshrc.zsh-template"
     dest: "{{user_home}}/.zshrc"
+    mode: 0644
+
+- name: Activate plugins
+  lineinfile:
+    path: "{{user_home}}/.zshrc"
+    regexp: "^plugins="
+    line: "plugins=(
+            git 
+            zsh-autosuggestions 
+            zsh-completions 
+            zsh-syntax-highlighting 
+            ohmyzsh-full-autoupdate
+            )"

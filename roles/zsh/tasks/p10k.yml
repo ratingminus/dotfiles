@@ -1,3 +1,4 @@
+# Installation
 - name: Install Powerline10k theme 
   ansible.builtin.git:
     repo: https://github.com/romkatv/powerlevel10k.git

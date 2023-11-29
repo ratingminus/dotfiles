@@ -6,5 +6,14 @@
     depth: 1
 
 - name: Copy generated p10k
-  copy: src=p10k.zsh dest={{user_home}}/.p10k.zsh
-  when: p10k
+  copy: 
+    src: p10k.zsh
+    dest: "{{user_home}}/.p10k.zsh"
+    mode: 0644
+  # when: p10k  
+
+- name: set p10k theme
+  lineinfile:
+    path: "{{user_home}}/.zshrc"
+    regexp: "^ZSH_THEME="
+    line: "ZSH_THEME=\"powerlevel10k/powerlevel10k\""

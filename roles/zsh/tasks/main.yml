@@ -9,6 +9,13 @@
   shell: chsh -s $(which zsh)
   when: ansible_os_family == "Debian"
 
+- name: Change user shell to zsh 
+  become: true
+  user:
+    name: "{{ shell_user }}"
+    shell: /bin/zsh
+  when: ansible_os_family == "Debian"
+
 # Configuration
 - name: Check if zshrc already exists
   stat: path="{{user_home}}/.zshrc"

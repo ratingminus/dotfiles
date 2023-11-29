@@ -42,4 +42,4 @@
 - name: Add Alias
   lineinfile:
     path: "{{user_home}}/.zshrc"
-    line: "{{ lookup('file', 'files/aliash.zsh') }}"
+    line: "{{ lookup('file', 'files/alias.zsh') }}"

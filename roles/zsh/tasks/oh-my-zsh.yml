@@ -1,0 +1,15 @@
+- name: install and configure ohmyzsh
+  include_role:
+    name: gantsign.oh-my-zsh
+  vars:
+    users:
+      - username: ratingminus
+        oh_my_zsh:
+          theme: powerlevel10k/powerlevel10k
+          plugins:
+            - git
+            - zsh-autosuggestions 
+            - zsh-syntax-highlighting
+            - ohmyzsh-full-autoupdate
+          update_mode: auto
+          write_zshrc: true

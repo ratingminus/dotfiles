@@ -1,0 +1,18 @@
+[hub]
+        protocol = https
+[user]
+        name = {{ full_name }}
+        email = {{ git_email }}
+{% if ansible_os_family == 'Darwin' %}
+[credential]
+        helper = osxkeychain
+{% endif %}
+
+{% if ansible_os_family == 'Debian' %}
+[credential]
+        helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{% endif %}
+
+
+[github]
+        user = {{ git_user }}

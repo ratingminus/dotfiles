@@ -1,0 +1,28 @@
+# Installation and setup
+- name: Make sure zsh is installed
+  apt: name=zsh state=present
+  become_method: sudo
+  when: ansible_os_family == "Debian"
+
+- name: Change user shell to zsh 
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+  when: ansible_os_family == "Debian"
+
+- name: ensure zsh is default shell
+  become: yes
+  shell: chsh -s $(which zsh)
+  when: ansible_os_family == "Debian"
+
+# Configuration
+- name: Check if zshrc already exists
+  stat: path="{{dotfiles_user_home}}/.zshrc"
+  register: zshrc_stat
+
+- name: Back up zshrc if it exists
+  command: mv ~/.zshrc ~/.zshrc.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.zshrc.bak"
+  when: zshrc_stat.stat.exists

@@ -1,7 +1,5 @@
-[hub]
-        protocol = https
 [user]
-        name = {{ full_name }}
+        name = {{ git_user }}
         email = {{ git_email }}
 {% if ansible_os_family == 'Darwin' %}
 [credential]
@@ -12,7 +10,4 @@
 [credential]
         helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 {% endif %}
-
-
-[github]
-        user = {{ git_user }}
+\n

@@ -1,15 +1,15 @@
 # Installation and setup
 - name: Make sure zsh is installed
   apt: name=zsh state=present
-  become_method: sudo
+  become: yes
   when: ansible_os_family == "Debian"
 
-- name: Change user shell to zsh 
-  become: yes
-  ansible.builtin.user:
-    name: "{{ shell_user }}"
-    shell: /bin/zsh
-  when: ansible_os_family == "Debian"
+# - name: Change user shell to zsh 
+#   become: yes
+#   ansible.builtin.user:
+#     name: "{{ shell_user }}"
+#     shell: /bin/zsh
+#   when: ansible_os_family == "Debian"
 
 - name: ensure zsh is default shell
   become: yes

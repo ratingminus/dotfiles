@@ -3,7 +3,7 @@
     name: gantsign.oh-my-zsh
   vars:
     users:
-      - username: ratingminus
+      - username: "{{shell_user}}"
         oh_my_zsh:
           theme: powerlevel10k/powerlevel10k
           plugins:

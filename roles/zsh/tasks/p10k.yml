@@ -1,8 +1,7 @@
-# tasks file for p10k
-- name: Install Powerline10k theme # noqa: latest
+- name: Install Powerline10k theme 
   ansible.builtin.git:
     repo: https://github.com/romkatv/powerlevel10k.git
-    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    dest: "{{user_home}}/.oh-my-zsh/custom/themes/powerlevel10k"
     depth: 1
 
 - name: Copy generated p10k

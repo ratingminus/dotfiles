@@ -1,7 +1,0 @@
-all:
-  vars:
-    ansible_user: ratingminus
-  hosts:
-  children:
-    localhost:
-      ansible_connection: local

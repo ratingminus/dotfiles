@@ -12,7 +12,7 @@
 - name: Change user shell to zsh 
   become: true
   user:
-    name: "ratingminus"
+    name: {{ ansible_user_id }}
     shell: /bin/zsh
   when: ansible_os_family == "Debian"
 

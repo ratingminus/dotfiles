@@ -39,6 +39,7 @@
             zsh-syntax-highlighting 
             ohmyzsh-full-autoupdate
             )"
+
 - name: Add Alias
   lineinfile:
     path: "{{user_home}}/.zshrc"

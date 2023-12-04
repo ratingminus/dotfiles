@@ -3,17 +3,8 @@
   become: true
   when: ansible_os_family == "Debian"
 
-- name: Check if gitconfig exists
-  stat: path="{{user_home}}/.gitconfig"
-  register: gitconfig_stat
-
-- name: Back up gitconfig
-  command: mv ~/.gitconfig ~/.gitconfig.bak
-  args:
-    creates: "{{user_home}}/.gitconfig.bak"
-  when: gitconfig_stat.stat.exists
-
 - name: Make sure gitconfig is up to date
   template:
-    src: "gitconfig.j2"
+    src: gitconfig.j2
     dest: "{{user_home}}/.gitconfig"
+    backup: true

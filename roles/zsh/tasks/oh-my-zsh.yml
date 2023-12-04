@@ -27,8 +27,7 @@
     repo: https://github.com/Pilaton/OhMyZsh-full-autoupdate.git
     dest: "{{user_home}}/.oh-my-zsh/custom/plugins/ohmyzsh-full-autoupdate"
     depth: 1
-    single_branch: yes
-    version: main
+    version: "main"
 
 - name: Generate zshrc
   copy:

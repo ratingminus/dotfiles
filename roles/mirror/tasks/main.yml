@@ -14,5 +14,3 @@
       apt:
         update_cache: yes
       when: replace_ubuntu_apt_config.changed
-
-  when: ansible_distribution|lower == 'ubuntu'

@@ -1,0 +1,6 @@
+- name: Installing Modern CLI Tools
+  apt:
+    name:
+      - bat
+      - exa
+    state: present

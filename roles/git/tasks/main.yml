@@ -1,6 +1,6 @@
 - name: Install git with apt
   apt: name=git state=present
-  become: yes
+  become: true
   when: ansible_os_family == "Debian"
 
 - name: Check if gitconfig exists

@@ -1,19 +1,5 @@
-# Installation and setup
-- name: Make sure zsh is installed
-  apt: name=zsh state=present
-  become: true
-  when: ansible_os_family == "Debian"
-
-- name: ensure zsh is default shell
-  become: true
-  shell: chsh -s $(which zsh)
-  when: ansible_os_family == "Debian"
-
-- name: Change user shell to zsh 
-  become: true
-  user:
-    name: {{ ansible_user_id }}
-    shell: /bin/zsh
+# Switch to ZSH
+- import_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
 # Configuration
@@ -29,5 +15,5 @@
 
 # Oh-my-zsh
 - import_tasks: oh-my-zsh.yml
-  # powerlevel10k
+# powerlevel10k
 - import_tasks: p10k.yml

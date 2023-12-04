@@ -1,0 +1,14 @@
+# Installation and setup
+- name: Make sure zsh is installed
+  apt: name=zsh state=present
+  become: true
+
+# - name: ensure zsh is default shell
+#   become: true
+#   shell: chsh -s $(which zsh)
+
+- name: Change user shell to zsh 
+  become: true
+  user:
+    name: {{ ansible_user_id }}
+    shell: /bin/zsh

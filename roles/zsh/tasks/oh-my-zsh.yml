@@ -32,15 +32,9 @@
   lineinfile:
     path: "{{user_home}}/.zshrc"
     regexp: "^plugins="
-    line: "plugins=(
-            git 
-            zsh-autosuggestions 
-            zsh-completions 
-            zsh-syntax-highlighting 
-            ohmyzsh-full-autoupdate
-            )"
+    line: "{{ lookup('file', 'files/plugins') }}"
 
 - name: Add Alias
   lineinfile:
     path: "{{user_home}}/.zshrc"
-    line: "{{ lookup('file', 'files/alias.zsh') }}"
+    line: "{{ lookup('file', 'files/alias') }}"

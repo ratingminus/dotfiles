@@ -1,0 +1,6 @@
+plugins=(   git 
+            zsh-autosuggestions 
+            zsh-completions 
+            zsh-syntax-highlighting 
+            ohmyzsh-full-autoupdate
+        )

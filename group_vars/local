@@ -6,5 +6,5 @@ git_user: ratingminus
 # If you use github, this should be the same as the email
 git_email: 4mahadi@gmail.com
 
-ubuntu_apt_mirror: 'http://mirror.xeonbd.com/ubuntu-archive/'
+ubuntu-apt-mirror: 'http://mirror.xeonbd.com/ubuntu-archive/'
 

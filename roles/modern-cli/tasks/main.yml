@@ -1,7 +1,7 @@
 - name: Installing Modern CLI Tools
-  become: true
   apt:
     name:
       - bat
       - exa
     state: present
+  become: true

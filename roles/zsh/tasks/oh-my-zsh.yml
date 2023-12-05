@@ -45,3 +45,8 @@
   lineinfile:
     path: "{{user_home}}/.zshrc"
     line: "{{ lookup('file', 'files/alias') }}"
+
+- name: Init zoxide-fzf-tools
+  lineinfile:
+    path: "{{user_home}}/.zshrc"
+    line: "{{ lookup('file', 'files/init') }}"

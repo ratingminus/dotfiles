@@ -3,5 +3,7 @@
     name:
       - bat
       - exa
+      - zoxide
+      - fzf
     state: present
   become: true

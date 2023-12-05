@@ -7,4 +7,4 @@ git_user: ratingminus
 git_email: 4mahadi@gmail.com
 
 ubuntu_apt_mirror: "http://mirror.xeonbd.com/ubuntu-archive/"
-
+jdk_ver: 17

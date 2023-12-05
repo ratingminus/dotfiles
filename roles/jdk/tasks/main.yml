@@ -1,4 +1,4 @@
 - name: Installing open-jdk
-  apt: name=default-jdk state=present
+  apt: name=openjdk-{{jdk_ver}}-jdk state=present
   become: true
   when: ansible_os_family == "Debian"
